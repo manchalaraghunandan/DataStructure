@@ -35,23 +35,4 @@ public class Dqueue<T> implements Queue {
 		front++;
 	}
 
-	@Override
-	public void enqueue((Object)T data) {
-		if (rear < capacity) {
-			if (rear > capacity && temp < front) {
-				for (int i = temp; i < front; i++) {
-					queue[i] = data;
-					temp++;
-				}
-			} else {
-				queue[rear] = data;
-				rear++;
-			}
-		} else
-			System.out.println("Queue is full");		
-	}
-
-	
-
-
 	}
