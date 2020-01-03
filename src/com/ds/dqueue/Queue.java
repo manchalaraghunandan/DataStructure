@@ -2,7 +2,7 @@ package com.ds.dqueue;
 
 public interface Queue<T> {
 
-	public void enqueue(Object data);
+	public void enqueue(T data);
 
-	void enqueue();
+	void dqueue();
 }

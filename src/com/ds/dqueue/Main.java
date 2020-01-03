@@ -9,10 +9,10 @@ public class Main {
 		queue.enqueue(39);
 		queue.enqueue(93);
 		queue.showResults();
-		queue.dequeue();
+		queue.dqueue();
 		queue.enqueue(34);
 		queue.showResults();
-		queue.dequeue();
+		queue.dqueue();
 		queue.enqueue(45);
 		queue.enqueue(98);
 		// queue.enqueue(85);

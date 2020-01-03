@@ -1,7 +1,7 @@
 package com.ds.dqueue;
 
 @SuppressWarnings("unchecked")
-public class Dqueue<T> implements Queue {
+public class Dqueue<T> implements Queue<T> {
 
 	private int front = 0;
 
@@ -29,29 +29,27 @@ public class Dqueue<T> implements Queue {
 		System.out.println();
 	}
 
-	public void dequeue() {
+	@Override
+	public void dqueue() {
 
 		queue[front] = null;
 		front++;
 	}
 
 	@Override
-	public void enqueue((Object)T data) {
+	public void enqueue(Object data) {
 		if (rear < capacity) {
 			if (rear > capacity && temp < front) {
 				for (int i = temp; i < front; i++) {
-					queue[i] = data;
+					queue[i] = (T) data;
 					temp++;
 				}
 			} else {
-				queue[rear] = data;
+				queue[rear] = (T) data;
 				rear++;
 			}
 		} else
-			System.out.println("Queue is full");		
+			System.out.println("Queue is full");
 	}
 
-	
-
-
-	}
+}
