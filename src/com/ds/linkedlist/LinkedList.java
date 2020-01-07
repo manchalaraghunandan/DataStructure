@@ -1,53 +1,54 @@
 package com.ds.linkedlist;
 
-public class LinkedList {
+public interface LinkedList {
 
-	Node head;
+	/**
+	 * This method will insert the data to the list next node by traversing the last node address
+	 * @param String data
+	 */
+	public void insert(Object data);
 
-	public void insert(String data) {
+	/**
+	 * 
+	 * @param String data 
+	 */
+	public void insertAtStart(Object data);
 
-		Node node = new Node();
-		node.data = data;
-		Node n = null;
-		if (head == null) {
-			head = node;
-		} else {
-			n = head;
-			while (n.next != null) {
-				n = n.next;
-			}
-			n.next = node;
-		}
-	}
+	/**
+	 * 
+	 * @param index
+	 * @param data
+	 */
+	public void insertAt(int index, Object data);
 
-	public void insertAtStart(String data) {
-		Node node = new Node();
-		node.data = data;
-		node.next = head;
-		head = node;
-	}
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
+	public Object find(Object data);
 
-	public void printData() {
-		Node n = head;
-		while (n.next != null) {
-			System.out.println(n.data);
-			n = n.next;
-		}
-		System.out.println(n.data);
-	}
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
+	public boolean contains(Object data);
 
-	public void insertAtStart(int index, String data) {
-		Node node = new Node();
-		Node n = head;
+	/**
+	 * 
+	 */
+	public void printData();
 
-		if (index == 1) {
-			insertAtStart(data);
-		}
-		for (int i = 1; i < index - 1; i++) {
-			n = n.next;
-		}
-		node.next = n.next;
-		node.data = data;
-		n.next = node;
-	}
+	/**
+	 * 
+	 * @return
+	 */
+	public Object element();
+
+	/**
+	* 
+	* @return
+	*/
+	public Object[] toArray();
 }
